@@ -1,0 +1,11 @@
+name: CommandList
+main: com.trentsterling.commandlist.CommandListPlugin
+version: 0.1
+description: Lists commands help
+author: Trent Sterling
+load:
+    -POSTWORLD
+commands:
+    helpme:
+        description: Lists commands help
+        usage: /helpme
