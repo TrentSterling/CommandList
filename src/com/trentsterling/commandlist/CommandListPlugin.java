@@ -109,7 +109,7 @@ public class CommandListPlugin extends JavaPlugin implements Listener
 		sender.sendMessage("Ignore chat from a player");
 
 		sender.sendMessage("");
-		sender.sendMessage(ChatColor.DARK_RED + "YOU MUST USE '/CHAT G' TO CHAT GLOBALLY! Otherwise we can't hear you!");
+		sender.sendMessage(ChatColor.DARK_RED + "YOU MUST USE '/G' TO CHAT GLOBALLY! Otherwise we can't hear you!");
 		sender.sendMessage(ChatColor.GOLD + "More help at " + ChatColor.WHITE + ChatColor.UNDERLINE + "http://ecruos.us/");
 
 	}
