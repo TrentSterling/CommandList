@@ -3,13 +3,47 @@ package com.trentsterling.commandlist;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class CommandListPlugin extends JavaPlugin
+public class CommandListPlugin extends JavaPlugin implements Listener
 {
+
+	public void onEnable()
+	{
+		super.onEnable();
+		getServer().getPluginManager().registerEvents(this, this);
+	}
+
+	@EventHandler
+	public void onPlayerCommandPreprocess(PlayerCommandPreprocessEvent e)
+	{
+		Player p = e.getPlayer();
+		String message = e.getMessage();
+
+		if (message.startsWith("/login"))
+		{
+			// messageOps("CMD: <" + p.getDisplayName() + "> " + ChatColor.DARK_RED + "LOGGED IN");
+			sendHelp(p);
+		}
+	}
 
 	public boolean onCommand(CommandSender sender, Command arg1, String arg2, String[] arg3)
 	{
+		sendHelp(sender);
+		// sender.sendMessage("*" + ChatColor.AQUA + "Vote for Ecruos Gaming's Minecraft servers!");
+		// sender.sendMessage("*" + ChatColor.AQUA + "Get VoterTokens! Spend them at the market!");
+		// sender.sendMessage(ChatColor.GOLD + "More news at " + ChatColor.WHITE + ChatColor.UNDERLINE + "http://ecruos.us/");
+
+		return true;
+	}
+
+	private void sendHelp(CommandSender sender)
+	{
+		// TODO Auto-generated method stub
 		sender.sendMessage(ChatColor.AQUA + "========== Command List ==========");
 
 		/*
@@ -19,7 +53,7 @@ public class CommandListPlugin extends JavaPlugin
 		 */
 
 		sender.sendMessage("");
-		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Misc Commands");
+		sender.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "--Misc Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/rules");
 		sender.sendMessage("Shows you our rules list");
 		sender.sendMessage("*" + ChatColor.GOLD + "/list");
@@ -30,7 +64,7 @@ public class CommandListPlugin extends JavaPlugin
 		sender.sendMessage("Lists voting websites you can use to get REWARDS!");
 
 		sender.sendMessage("");
-		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Teleportation Commands");
+		sender.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "--Teleportation Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/spawn");
 		sender.sendMessage("Teleports you to spawn");
 		sender.sendMessage("*" + ChatColor.GOLD + "/market");
@@ -47,7 +81,7 @@ public class CommandListPlugin extends JavaPlugin
 		sender.sendMessage("Toggles auto accept/deny, and prompt for teleport requests");
 
 		sender.sendMessage("");
-		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Island Commands");
+		sender.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "--Island Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/island or /is");
 		sender.sendMessage("Lists all island commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/is create");
@@ -62,7 +96,7 @@ public class CommandListPlugin extends JavaPlugin
 		sender.sendMessage("Kick out a visitor!");
 
 		sender.sendMessage("");
-		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Chat Commands");
+		sender.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "--Chat Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/c (G|L|A)");
 		sender.sendMessage("Chat control - (G)lobal, (L)ocal, or (A)dmin");
 		sender.sendMessage("*" + ChatColor.GOLD + "/m <player> message");
@@ -73,13 +107,8 @@ public class CommandListPlugin extends JavaPlugin
 		sender.sendMessage("Ignore chat from a player");
 
 		sender.sendMessage("");
-		sender.sendMessage(ChatColor.DARK_RED + "YOU MUST USE /G TO CHAT GLOBALLY! Otherwise we can't hear you!");
+		sender.sendMessage(ChatColor.DARK_RED + "YOU MUST USE '/CHAT G' TO CHAT GLOBALLY! Otherwise we can't hear you!");
 		sender.sendMessage(ChatColor.GOLD + "More help at " + ChatColor.WHITE + ChatColor.UNDERLINE + "http://ecruos.us/");
 
-		// sender.sendMessage("*" + ChatColor.AQUA + "Vote for Ecruos Gaming's Minecraft servers!");
-		// sender.sendMessage("*" + ChatColor.AQUA + "Get VoterTokens! Spend them at the market!");
-		// sender.sendMessage(ChatColor.GOLD + "More news at " + ChatColor.WHITE + ChatColor.UNDERLINE + "http://ecruos.us/");
-
-		return true;
 	}
 }
