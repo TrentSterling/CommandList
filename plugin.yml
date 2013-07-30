@@ -9,3 +9,7 @@ commands:
     helpme:
         description: Lists commands help
         usage: /helpme
+
+    help:
+        description: Lists commands help
+        usage: /help

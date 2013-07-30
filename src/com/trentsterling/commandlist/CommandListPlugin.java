@@ -62,6 +62,8 @@ public class CommandListPlugin extends JavaPlugin implements Listener
 		sender.sendMessage("Shows you players in all EG servers!");
 		sender.sendMessage("*" + ChatColor.GOLD + "/vote");
 		sender.sendMessage("Lists voting websites you can use to get REWARDS!");
+		sender.sendMessage("*" + ChatColor.GOLD + "/convert <amount>");
+		sender.sendMessage("Convert your cobblestone into shoptokens!!!");
 
 		sender.sendMessage("");
 		sender.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "--Teleportation Commands");
@@ -97,7 +99,7 @@ public class CommandListPlugin extends JavaPlugin implements Listener
 
 		sender.sendMessage("");
 		sender.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "--Chat Commands");
-		sender.sendMessage("*" + ChatColor.GOLD + "/c (G|L|A)");
+		sender.sendMessage("*" + ChatColor.GOLD + "/g, /l, /a");
 		sender.sendMessage("Chat control - (G)lobal, (L)ocal, or (A)dmin");
 		sender.sendMessage("*" + ChatColor.GOLD + "/m <player> message");
 		sender.sendMessage("Message Player");
