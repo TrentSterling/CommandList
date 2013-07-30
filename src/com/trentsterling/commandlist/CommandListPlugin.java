@@ -63,8 +63,8 @@ public class CommandListPlugin extends JavaPlugin
 
 		sender.sendMessage("");
 		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Chat Commands");
-		sender.sendMessage("*" + ChatColor.GOLD + "/g message");
-		sender.sendMessage("Global Chat");
+		sender.sendMessage("*" + ChatColor.GOLD + "/c (G|L|A)");
+		sender.sendMessage("Chat control - (G)lobal, (L)ocal, or (A)dmin");
 		sender.sendMessage("*" + ChatColor.GOLD + "/m <player> message");
 		sender.sendMessage("Message Player");
 		sender.sendMessage("*" + ChatColor.GOLD + "/r message");
