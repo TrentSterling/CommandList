@@ -18,16 +18,19 @@ public class CommandListPlugin extends JavaPlugin
 		 * commandsList.add("decline"); commandsList.add("reject"); commandsList.add("plotme"); commandsList.add("spawn"); commandsList.add("home");
 		 */
 
-		sender.sendMessage(ChatColor.YELLOW + "--Misc Commands");
+		sender.sendMessage("");
+		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Misc Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/rules");
 		sender.sendMessage("Shows you our rules list");
 		sender.sendMessage("*" + ChatColor.GOLD + "/list");
 		sender.sendMessage("Shows you players in this server");
 		sender.sendMessage("*" + ChatColor.GOLD + "/glist");
 		sender.sendMessage("Shows you players in all EG servers!");
+		sender.sendMessage("*" + ChatColor.GOLD + "/vote");
+		sender.sendMessage("Lists voting websites you can use to get REWARDS!");
 
-		sender.sendMessage(ChatColor.YELLOW + "--Teleportation Commands");
-
+		sender.sendMessage("");
+		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Teleportation Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/spawn");
 		sender.sendMessage("Teleports you to spawn");
 		sender.sendMessage("*" + ChatColor.GOLD + "/market");
@@ -43,8 +46,8 @@ public class CommandListPlugin extends JavaPlugin
 		sender.sendMessage("*" + ChatColor.GOLD + "/tptoggle");
 		sender.sendMessage("Toggles auto accept/deny, and prompt for teleport requests");
 
-		sender.sendMessage(ChatColor.YELLOW + "--Island Commands");
-
+		sender.sendMessage("");
+		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Island Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/island or /is");
 		sender.sendMessage("Lists all island commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/is create");
@@ -58,8 +61,8 @@ public class CommandListPlugin extends JavaPlugin
 		sender.sendMessage("*" + ChatColor.GOLD + "/is expell <player>");
 		sender.sendMessage("Kick out a visitor!");
 
-		sender.sendMessage(ChatColor.YELLOW + "--Chat Commands");
-
+		sender.sendMessage("");
+		sender.sendMessage(ChatColor.YELLOW +""+ ChatColor.BOLD + "--Chat Commands");
 		sender.sendMessage("*" + ChatColor.GOLD + "/g message");
 		sender.sendMessage("Global Chat");
 		sender.sendMessage("*" + ChatColor.GOLD + "/m <player> message");
@@ -69,6 +72,7 @@ public class CommandListPlugin extends JavaPlugin
 		sender.sendMessage("*" + ChatColor.GOLD + "/ignore <player>");
 		sender.sendMessage("Ignore chat from a player");
 
+		sender.sendMessage("");
 		sender.sendMessage(ChatColor.DARK_RED + "YOU MUST USE /G TO CHAT GLOBALLY! Otherwise we can't hear you!");
 		sender.sendMessage(ChatColor.GOLD + "More help at " + ChatColor.WHITE + ChatColor.UNDERLINE + "http://ecruos.us/");
 
